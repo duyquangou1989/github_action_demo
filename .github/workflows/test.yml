@@ -19,3 +19,4 @@ jobs:
           docker build . -f Dockerfile -t 200989/github-demo:$(date +%s)
       - name: Docker push
         run: docker push  200989/github-demo:$(date +%s)
+
