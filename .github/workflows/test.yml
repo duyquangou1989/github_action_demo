@@ -7,4 +7,4 @@ jobs:
     steps:
       - run: ls -lat 
       - run: pwd
-      - run: docker ps -a
+      - run: echo ${{ secrets.TEST_SECRET }}
