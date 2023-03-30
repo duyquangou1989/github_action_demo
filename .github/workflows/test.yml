@@ -2,17 +2,7 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  initjob:
+  build-image:
     runs-on: ubuntu-latest
-    env:
-      owner_name: quangtd
-      SUPER_SECRET: ${{ secrets.TEST_SECRET }}
     steps:
-      - run: ls -lat 
-      - run: ls -lat ../
-      - run: pwd
-      - run: echo $SUPER_SECRET $owner_name $GITHUB_ACTION_REPOSITORY
-      - run: |
-          echo "Hello secret $SUPER_SECRET"
-      - run: docker build . -t ghcr.io/quangtd_github_demo/demo:latest
-      - run: docker push ghcr.io/quangtd_github_demo/demo:latest
+      - uses: actions/checkout@v2
