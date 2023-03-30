@@ -2,9 +2,11 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  initjob:
     runs-on: ubuntu-latest
+    env:
+      owner_name: quangtd
     steps:
       - run: ls -lat 
       - run: pwd
-      - run: echo $TEST_SECRET
+      - run: echo $TEST_SECRET $owner_name
