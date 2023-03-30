@@ -8,7 +8,7 @@ jobs:
       IMAGE_NAME: ${{ github.repository }}
     steps: 
       - uses: actions/checkout@v2
-      - run: helm version
+      - run: helm version && kubectl version
       - name: Build & push
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
