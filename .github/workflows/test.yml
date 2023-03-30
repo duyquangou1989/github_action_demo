@@ -13,3 +13,5 @@ jobs:
       - run: echo $SUPER_SECRET $owner_name $GITHUB_ACTION_REPOSITORY
       - run: |
           echo "Hello secret $SUPER_SECRET"
+      - run: docker build . -t ghcr.io/quangtd_github_demo/demo:latest
+      - run: docker push ghcr.io/quangtd_github_demo/demo:latest
