@@ -9,4 +9,4 @@ jobs:
     steps:
       - run: ls -lat 
       - run: pwd
-      - run: echo $TEST_SECRET $owner_name
+      - run: echo $TEST_SECRET $owner_name $GITHUB_ACTION_REPOSITORY
