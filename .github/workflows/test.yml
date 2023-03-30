@@ -6,7 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       owner_name: quangtd
+      SUPER_SECRET: ${{ secrets.TEST_SECRET }}
     steps:
       - run: ls -lat 
       - run: pwd
-      - run: echo $TEST_SECRET $owner_name $GITHUB_ACTION_REPOSITORY
+      - run: echo $SUPER_SECRET $owner_name $GITHUB_ACTION_REPOSITORY
+      - run: |
+          echo "Hello secret $SUPER_SECRET"
