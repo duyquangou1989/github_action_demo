@@ -7,3 +7,4 @@ jobs:
     steps:
       - run: ls -lat 
       - run: pwd
+      - run: docker ps -a
