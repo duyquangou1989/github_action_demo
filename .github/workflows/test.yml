@@ -21,4 +21,3 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - run: |
           kubectl get pods -n default
-
