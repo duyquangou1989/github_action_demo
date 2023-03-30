@@ -9,6 +9,7 @@ jobs:
       SUPER_SECRET: ${{ secrets.TEST_SECRET }}
     steps:
       - run: ls -lat 
+      - run: ls -lat ../
       - run: pwd
       - run: echo $SUPER_SECRET $owner_name $GITHUB_ACTION_REPOSITORY
       - run: |
