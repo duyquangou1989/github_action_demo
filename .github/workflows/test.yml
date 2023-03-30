@@ -8,6 +8,7 @@ jobs:
       IMAGE_NAME: ${{ github.repository }}
       KUBE_CONFIG_DATA: ${{ secrets.KUBECONFIG_HHGDEV }}
     steps: 
+      - run: export KUBECONFIG=$KUBE_CONFIG_DATA && kubectl get pods -n default
       - uses: actions/checkout@v2
       # - run: helm version && kubectl version
       - name: Build & push
@@ -19,6 +20,3 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - uses: steebchen/kubectl@master
-        with:
-          args: get pods -n default
