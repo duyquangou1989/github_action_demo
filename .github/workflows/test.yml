@@ -9,7 +9,7 @@ jobs:
       KUBE_CONFIG_DATA: ${{ secrets.KUBECONFIG_HHGDEV }}
     steps: 
       - uses: actions/checkout@v2
-      - run: helm version && kubectl version
+      # - run: helm version && kubectl version
       - name: Build & push
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
